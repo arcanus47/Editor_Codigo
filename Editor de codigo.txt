@@ -1,0 +1,61 @@
+Un editor de código es una herramienta esencial para los programadores, diseñada para escribir y editar código fuente de manera eficiente.
+
+----------------------------
+| Interfaz de Usuario (UI) |
+----------------------------
+-Área de Edición: Donde escribes y editas el código. Suele ser un área de texto con características especiales para el código.
+-Barra de Herramientas y Menús: Ofrecen accesos rápidos a funciones como guardar, buscar y reemplazar, compilar, y ejecutar.
+-Paneles y Vistas: Pueden incluir una vista de árbol de archivos, consola de salida, y otras herramientas adicionales.
+
+-------------------------
+| Destacado de Sintaxis |
+-------------------------
+-Colores y Formato: El editor resalta diferentes elementos del código (como palabras clave, variables, y comentarios) con colores y estilos para facilitar la lectura y la comprensión.
+
+--------------------------------
+| Autocompletado y Sugerencias |
+--------------------------------
+-Autocompletado: Ofrece sugerencias mientras escribes, como nombres de funciones y variables, para acelerar el proceso de codificación y reducir errores.
+-Documentación en Línea: Proporciona información sobre funciones y métodos mientras los escribes.
+
+--------------------------
+| Errores y Advertencias |
+--------------------------
+-Resaltado de Errores: Identifica errores de sintaxis o de lógica en el código y los resalta en tiempo real.
+-Mensajes de Advertencia: Señala problemas potenciales que podrían causar errores durante la ejecución.
+
+-----------------------------------------
+| Integración con Herramientas Externas |
+-----------------------------------------
+-Control de Versiones: Se integra con sistemas como Git para gestionar versiones del código.
+-Compiladores e Intérpretes: Permite compilar o interpretar el código directamente desde el editor.
+
+--------------------------------
+| Refactorización y Navegación |
+--------------------------------
+-Refactorización: Facilita la reorganización del código sin cambiar su funcionalidad, como renombrar variables o extraer métodos.
+-Navegación del Código: Permite saltar rápidamente a definiciones de funciones, clases y otras estructuras del código.
+
+-------------------------------------
+| Configuraciones y Personalización |
+-------------------------------------
+-Temas y Esquemas de Color: Puedes ajustar el aspecto del editor para que se adapte a tus preferencias.
+-Extensiones y Plugins: Añaden funcionalidades adicionales, como soporte para nuevos lenguajes o herramientas específicas.
+_________________________________________________________________________________________________________________________________________________________________
+---------------------------
+| ESTRUCTURA DEL PROYECTO |
+-----------------------------------------
+| TECNOLOGIAS Y HERRAMIENTAS A UTILIZAR |
+-----------------------------------------
+Python, Tkinter, Pygments, VSCode, GIT, Github
+
+-----------		----------		----------		-------			------------		-------------
+| ARCHIVO |		| EDITAR |		| BUSCAR |		| VER |			| EJECUTAR |		| ACERCA DE |
+-----------		----------		----------		-------			------------		-------------
+Nuevo			Deshacer		Buscar			Ampliar			Ejecutar		Acerca de
+Abrir			Rehacer			Buscar Siguiente	Reducir			Depurar			Creditos
+Archivos Recientes	Cortar			Buscar Anterior		Restablecer		Detener			Licencia
+Guardar			Copiar			Ir a la Linea		Estilos			
+Guardar Como		Pegar
+Imprimir		Formato de Archivos
+Salir
