@@ -9,21 +9,6 @@ from pygments.lexers import PythonLexer
 from pygments.styles import get_style_by_name
 
 #-------------------------------------------------------------------------------------------------
-# Función para crear la barra de números de línea
-def crear_barra_numeros_linea(padre):
-    barra_numeros = tk.Text(padre, width=4, padx=3, state='disabled', takefocus=0, background="#2E3440", foreground="white")
-    return barra_numeros
-
-# Función para actualizar los números de línea
-def actualizar_numeros_linea(evento=None):
-    barra_numeros_linea.config(state='normal')
-    barra_numeros_linea.delete(1.0, tk.END)
-    linea_final, _ = text_area.index('end-1c').split('.')
-    numeros_linea = "\n".join(str(i) for i in range(1, int(linea_final)))
-    barra_numeros_linea.insert(1.0, numeros_linea)
-    barra_numeros_linea.config(state='disabled')
-
-#-------------------------------------------------------------------------------------------------
 # Crear la ventana principal
 root = tk.Tk()
 root.state('zoomed')
@@ -255,6 +240,19 @@ def apply_syntax_highlighting(event=None):
             text_area.tag_add(tag_name, start_index, end_index)
             start_index = text_area.search(value, end_index, tk.END)
 
+# Función para crear la barra de números de línea
+def crear_barra_numeros_linea(padre):
+    barra_numeros = tk.Text(padre, width=4, padx=3, state='disabled', takefocus=0, background="#2E3440", foreground="white")
+    return barra_numeros
+
+# Función para actualizar los números de línea
+def actualizar_numeros_linea(evento=None):
+    barra_numeros_linea.config(state='normal')
+    barra_numeros_linea.delete(1.0, tk.END)
+    linea_final, _ = text_area.index('end-1c').split('.')
+    numeros_linea = "\n".join(str(i) for i in range(1, int(linea_final)))
+    barra_numeros_linea.insert(1.0, numeros_linea)
+    barra_numeros_linea.config(state='disabled')
 #-------------------------------------------------------------------------------------------------
 # Crear área de texto y barra de números de línea
 frame_texto = tk.Frame(root)
