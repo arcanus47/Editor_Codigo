@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import pyperclip
+import os
 
 # Crear la ventana principal
 root = tk.Tk()
@@ -19,6 +20,59 @@ menu_bar = tk.Menu(root)
 # Menú Archivo
 menu_archivo = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Archivo", menu=menu_archivo)
+archivos_recientes = []
+
+def nuevo_archivo():
+    nombre_archivo = input("Ingresa el nombre del nuevo archivo (con extensión): ")
+    open(nombre_archivo, 'w').close()
+    print(f"Archivo '{nombre_archivo}' creado exitosamente.")
+    agregar_a_archivos_recientes(nombre_archivo)
+
+def abrir_archivo():
+    nombre_archivo = input("Ingresa el nombre del archivo a abrir (con extensión): ")
+    if os.path.isfile(nombre_archivo):
+        with open(nombre_archivo, 'r') as archivo:
+            print(f"Contenido del archivo '{nombre_archivo}':\n{archivo.read()}")
+        agregar_a_archivos_recientes(nombre_archivo)
+    else:
+        print(f"El archivo '{nombre_archivo}' no existe.")
+
+def guardar_archivo(nombre_archivo, contenido):
+    with open(nombre_archivo, 'w') as archivo:
+        archivo.write(contenido)
+    print(f"Archivo '{nombre_archivo}' guardado exitosamente.")
+    agregar_a_archivos_recientes(nombre_archivo)
+
+def guardar_como():
+    nuevo_nombre_archivo = input("Ingresa el nombre para guardar el archivo (con extensión): ")
+    contenido = input("Ingresa el contenido que deseas guardar: ")
+    guardar_archivo(nuevo_nombre_archivo, contenido)
+
+def imprimir_archivo(nombre_archivo):
+    if os.path.isfile(nombre_archivo):
+        with open(nombre_archivo, 'r') as archivo:
+            print(f"Contenido del archivo '{nombre_archivo}':\n{archivo.read()}")
+    else:
+        print(f"El archivo '{nombre_archivo}' no existe.")
+
+def salir():
+    print("Saliendo del programa...")
+    exit()
+
+def agregar_a_archivos_recientes(nombre_archivo):
+    if nombre_archivo not in archivos_recientes:
+        archivos_recientes.append(nombre_archivo)
+    else:
+        archivos_recientes.remove(nombre_archivo)
+        archivos_recientes.append(nombre_archivo)
+    
+    if len(archivos_recientes) > 5:
+        archivos_recientes.pop(0)
+
+def mostrar_archivos_recientes():
+    print("\nArchivos recientes:")
+    for archivo in archivos_recientes:
+        print(f"- {archivo}")
 
 # Menú Editar
 menu_editar = tk.Menu(menu_bar, tearoff=0)
