@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
+import pyperclip
 
 # Crear la ventana principal
 root = tk.Tk()
@@ -22,6 +23,14 @@ menu_bar.add_cascade(label="Archivo", menu=menu_archivo)
 # Menú Editar
 menu_editar = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Editar", menu=menu_editar)
+def Pegar():
+    pyperclip.paste()
+    
+def Cortar():
+    pyperclip.cut() 
+        
+def Copiar():
+    pyperclip.copy()   
 
 # Menú Buscar
 menu_buscar = tk.Menu(menu_bar, tearoff=0)
