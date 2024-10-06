@@ -32,6 +32,12 @@ def Cortar():
 def Copiar():
     pyperclip.copy()   
 
+def Deshacer():
+    pyperclip.undo()
+ 
+def Rehacer():
+    pyperclip.redo()
+
 # Menú Buscar
 menu_buscar = tk.Menu(menu_bar, tearoff=0)
 menu_bar.add_cascade(label="Buscar", menu=menu_buscar)
